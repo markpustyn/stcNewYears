@@ -65,7 +65,7 @@ export default function Home() {
       {/* Header Section */}
       <div className="flex items-center gap-4 mb-8">
         <Image src="/logo.png" alt="STC logo" width={100} height={100} />
-        <h1 className="text-3xl font-bold text-gray-800">2025 New Year's Celebration</h1>
+        <h1 className="text-3xl font-bold text-gray-800">2025 New Years Celebration</h1>
       </div>
 
       {/* Cards Grid */}
