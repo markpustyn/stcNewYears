@@ -9,7 +9,7 @@ import Image from "next/image";
 import { 
   FaCamera, 
   FaEnvelope, 
-  FaClipboardList, 
+  FaClipboardList,
   FaPalette, 
   FaCoffee, 
   FaCookieBite, 
@@ -33,23 +33,23 @@ export default function Home() {
     {
       id: 1,
       title: "Choir Room #1",
-      content: "Beautiful memories with friends captured in photos",
+      content: "Beautiful memories with friends captured in timeless photos",
       description:
-        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2025! Bring friends and company to share the excitement with them!",
+        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where you can capture the first hours of 2025! Bring friends and company to share the excitement with them!",
       icon: <FaCamera className="text-2xl text-gray-700" aria-hidden="true" />, // Photography icon
     },
     {
       id: 2,
-      title: "Room #9",
+      title: "Classroom #9",
       content:
-        "Purest wishes and celebratory letters to express yourself and bring joy to people around you! Attach a homemade cake pop for just $2 to surprise your recipient.",
+        "Send your purest wishes and celebratory letters to express yourself and bring the joy to people around you! Attach a homemade cake pop for just $2 to surprise your recipient.",
       description:
         "A room set up with writing stations, cards, and all necessary resources to write a heartfelt card to someone you are glad to know, respect, or want to express your gratitude to. You can make it anonymous or share your name, but be sure to fill it with kindness and love!",
       icon: <FaEnvelope className="text-2xl text-gray-700" aria-hidden="true" />, // Envelope icon
     },
     {
       id: 3,
-      title: "Room #8",
+      title: "Classroom #8",
       content: "Pick up your cards even faster!",
       description:
         "If you cannot wait for the staff to find you and hand you the cards addressed to you, feel free to stop by Room #8 and find the cards on the tables organized by the first letter of your last name.",
@@ -57,7 +57,7 @@ export default function Home() {
     },
     {
       id: 4,
-      title: "Room #7 - Craft Competitions",
+      title: "Classroom #7 - Craft Competitions",
       content:
         "Compete with your friends and other youth for a prize by participating in craft competitions!",
       description:
@@ -66,7 +66,7 @@ export default function Home() {
     },
     {
       id: 5,
-      title: "Room #5",
+      title: "Classroom #5",
       content:
         "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
       description:
@@ -75,7 +75,7 @@ export default function Home() {
     },
     {
       id: 6,
-      title: "Room #4",
+      title: "Classroom #4",
       content:
         "Test your knowledge in various categories for a title of the smartest STC Youth member and a sizable cash prize!",
       description:
@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       id: 7,
-      title: "Room #1 - Coffee Bar",
+      title: "Classroom #1 - Coffee Bar",
       content:
         "Our great baristas ready to make you a cup of delicious coffee to accompany you for the celebration",
       description:
@@ -169,6 +169,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">{item.content}</p>
+              <h2 xlassName="text-xl text-gray-400">Click Here to see more</h2>
                 {isOpen && (
                   <p className="text-gray-600 mt-2">{item.description}</p>
                 )}
