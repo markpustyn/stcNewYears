@@ -122,13 +122,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <div className="flex items-center gap-4 mb-8">
-        <Image src="/logo.png" alt="STC logo" width={100} height={100} />
-        <h1 className="text-3xl font-bold text-gray-800">2025 New Years Celebration</h1>
-      <Link href={"/"}>
-        <Button>
-        English
-        </Button>
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 w-full max-w-4xl">
+        <div className="flex items-center gap-4">
+          <Image src="/logo.png" alt="STC logo" width={80} height={80} className="sm:w-20 sm:h-20" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">
+            2025 New Years Celebration
+          </h1>
+        </div>
+        <Link href="/">
+          <Button className="w-full sm:w-auto">
+            English
+          </Button>
         </Link>
       </div>
       <div>
