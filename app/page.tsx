@@ -169,9 +169,11 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">{item.content}</p>
-                <div className="flex items-center">
-                  <h2 className="text-md text-gray-400 text-center pt-2">Click Here to see more</h2>
+                {!isOpen && (
+                    <div className="flex items-center justify-center">
+                  <h2 className="text-[12px] text-gray-400 text-center pt-2">Click here to see more</h2>
                 </div>
+                )}
                 {isOpen && (
                   <p className="text-gray-600 mt-2">{item.description}</p>
                 )}
