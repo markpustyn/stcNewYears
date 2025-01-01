@@ -1,3 +1,4 @@
+'use client'
 import {
   Card,
   CardContent,
@@ -5,89 +6,176 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import {
-  FaCoffee,
+import { 
+  FaCamera, 
+  FaEnvelope, 
+  FaClipboardList, 
+  FaPalette, 
+  FaCoffee, 
+  FaCookieBite, 
+  FaCouch, 
+  FaMusic, 
   FaPaintBrush,
-  FaEnvelope,
-  FaCouch,
-  FaCamera,
-  FaQuestionCircle,
-} from "react-icons/fa"; // Importing icons from react-icons
+  FaQuestionCircle
+} from 'react-icons/fa';
+import Schedule from "./schedule";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 export default function Home() {
+
+  const [openCard, setOpenCard] = useState<number | null>(null);
+  const [hoverCard, setHoverCard] = useState<number | null>(null);
+
   const data = [
     {
       id: 1,
-      title: "Room 1 - Coffee",
-      content:
-        "Enjoy Hot and Iced Lattes, Cappuccinos, and Americanos in our cozy coffee room.",
-      icon: <FaCoffee className="text-2xl text-gray-700" aria-hidden="true" />, // Coffee icon
-    },
-    {
-      id: 2,
-      title: "Room 7 - Crafts",
-      content:
-        "Build gingerbread houses or participate in a bridge-building competition in our crafts room.",
-      icon: <FaPaintBrush className="text-2xl text-gray-700" aria-hidden="true" />, // Crafts icon
-    },
-    {
-      id: 3,
-      title: "Room 9 - Mail",
-      content:
-        "Send a letter to your friends and add a cake pop for just $2 each in our mail room.",
-      icon: <FaEnvelope className="text-2xl text-gray-700" aria-hidden="true" />,
-    },
-    {
-      id: 4,
-      title: "Brothers Room - Lounge",
-      content:
-        "Relax in our lounge equipped with bean bag chairs, Jenga, Connect 4, and puzzles.",
-      icon: <FaCouch className="text-2xl text-gray-700" aria-hidden="true" />, // Lounge icon
-    },
-    {
-      id: 5,
-      title: "Choir Room 1 - Photos",
-      content:
-        "Capture memories with our photographer and photo booth for you and your friends.",
+      title: "Choir Room #1",
+      content: "Beautiful memories with friends captured in photos",
+      description:
+        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2025! Bring friends and company to share the excitement with them!",
       icon: <FaCamera className="text-2xl text-gray-700" aria-hidden="true" />, // Photography icon
     },
     {
-      id: 6,
-      title: "Choir Room 2 - Trivia",
+      id: 2,
+      title: "Room #9",
       content:
-        "Challenge yourself with trivia on topics like Bible, History, Math, and more.",
-      icon: <FaQuestionCircle className="text-2xl text-gray-700" aria-hidden="true" />, // Trivia icon
+        "Purest wishes and celebratory letters to express yourself and bring joy to people around you! Attach a homemade cake pop for just $2 to surprise your recipient.",
+      description:
+        "A room set up with writing stations, cards, and all necessary resources to write a heartfelt card to someone you are glad to know, respect, or want to express your gratitude to. You can make it anonymous or share your name, but be sure to fill it with kindness and love!",
+      icon: <FaEnvelope className="text-2xl text-gray-700" aria-hidden="true" />, // Envelope icon
+    },
+    {
+      id: 3,
+      title: "Room #8",
+      content: "Pick up your cards even faster!",
+      description:
+        "If you cannot wait for the staff to find you and hand you the cards addressed to you, feel free to stop by Room #8 and find the cards on the tables organized by the first letter of your last name.",
+      icon: <FaClipboardList className="text-2xl text-gray-700" aria-hidden="true" />, // Clipboard icon
+    },
+    {
+      id: 4,
+      title: "Room #7 - Craft Competitions",
+      content:
+        "Compete with your friends and other youth for a prize by participating in craft competitions!",
+      description:
+        "A fun and relaxing way to spend your free time with friends and a place to try out your engineering, critical thinking, and designing skills for a chance to receive a prize!",
+      icon: <FaPalette className="text-2xl text-gray-700" aria-hidden="true" />, // Palette icon
+    },
+    {
+      id: 5,
+      title: "Room #5",
+      content:
+        "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
+      description:
+        "Several drawing and writing stations with an inspiring atmosphere and amazing staff to help you be creative and express your inner artist in painting a beautiful picture or composing an amazing poem!",
+      icon: <FaPaintBrush className="text-2xl text-gray-700" aria-hidden="true" />, // Paint Brush icon
+    },
+    {
+      id: 6,
+      title: "Room #4",
+      content:
+        "Test your knowledge in various categories for a title of the smartest STC Youth member and a sizable cash prize!",
+      description:
+        "A room with a beautiful professional decor and a fair system to really test your knowledge. Are you ready for a challenge? Can you win the prize and walk away from this night’s celebration as the smartest contestor?",
+      icon: <FaQuestionCircle className="text-2xl text-gray-700" aria-hidden="true" />, // Question Circle icon
+    },
+    {
+      id: 7,
+      title: "Room #1 - Coffee Bar",
+      content:
+        "Our great baristas ready to make you a cup of delicious coffee to accompany you for the celebration",
+      description:
+        "A business-style service of delectable coffee by the amazing STC Coffee crew and their welcoming atmosphere. Don’t miss out on their amazing menu items, open for ordering through the QR code during the food time and via the live line during the free time!",
+      icon: <FaCoffee className="text-2xl text-gray-700" aria-hidden="true" />, // Coffee icon
+    },
+    {
+      id: 8,
+      title: "Middle Hall",
+      content: "LOTS of the most delicious homemade sweets with a unique surprise!",
+      description:
+        "Various sweets and treats brought to you by the best bakers and cooks of Slavic Trinity Church. Enjoy a variety of fruits and sweets and definitely come by to find out the big surprise!",
+      icon: <FaCookieBite className="text-2xl text-gray-700" aria-hidden="true" />, // Cookie Bite icon
+    },
+    {
+      id: 9,
+      title: "Brothers Room",
+      content:
+        "Grab your drinks, your sweets, and your friends to relax and spend time together in conversations and games with a warm cozy atmosphere!",
+      description:
+        "A lounge area to spend time in a quiet, pleasant environment and communicate with other people. Choose from a number of games such as Jenga or Connect 4, or try to finish a puzzle with a group of friends and strangers!",
+      icon: <FaCouch className="text-2xl text-gray-700" aria-hidden="true" />, // Couch icon
+    },
+    {
+      id: 10,
+      title: "Small Hall",
+      content: "Watch our this years slideshow highlighting this years youths moments",
+      description:
+        "You can always come back to your spot and watch the memories from the year shared by the youth. Feel free to bring your sweets and beverages back and watch the slideshow, listen to music, talk to people, and enjoy the night!",
+      icon: <FaMusic className="text-2xl text-gray-700" aria-hidden="true" />, // Music icon
     },
   ];
+  
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      {/* Header Section */}
       <div className="flex items-center gap-4 mb-8">
         <Image src="/logo.png" alt="STC logo" width={100} height={100} />
         <h1 className="text-3xl font-bold text-gray-800">2025 New Years Celebration</h1>
+      <Link href={"/uk"}>
+        <Button>
+        Український
+        </Button>
+        </Link>
+      </div>
+      <div>
+        <Schedule />
       </div>
 
-      {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:w-2/3">
-        {data.map((item) => (
-          <Card key={item.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="flex items-center">
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0">
-                  {item.icon}
+        {data.map((item) => {
+          const isOpen = openCard === item.id;
+          const isHovered = hoverCard === item.id;
+
+          return (
+            <Card
+              key={item.id}
+              // Toggle open on click
+              onClick={() => setOpenCard(isOpen ? null : item.id)}
+              // Track hover
+              onMouseEnter={() => setHoverCard(item.id)}
+              onMouseLeave={() => setHoverCard(null)}
+              // Add conditional border
+              className={`transition-shadow duration-300 cursor-pointer
+                shadow-lg hover:shadow-xl
+                ${isOpen || isHovered ? "border-2 shadow-xl" : ""}
+              `}
+            >
+              <CardHeader className="flex items-center">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0">{item.icon}</div>
+                  <CardTitle className="text-xl font-semibold text-gray-800">
+                    {item.title}
+                  </CardTitle>
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-800">
-                  {item.title}
-                </CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">{item.content}</p>
-            </CardContent>
-          </Card>
-        ))}
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">{item.content}</p>
+                {isOpen && (
+                  <p className="text-gray-600 mt-2">{item.description}</p>
+                )}
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
+
+      <footer className="sticky top-[100vh] text-nowrap text-[12px] md:text-[16px] pt-12">
+        © 2025 Slavic Trinity Church, Sacramento, CA. All Rights Reserved.
+      </footer>
     </div>
   );
 }
