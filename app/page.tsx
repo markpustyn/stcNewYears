@@ -169,7 +169,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">{item.content}</p>
-              <h2 xlassName="text-xl text-gray-400">Click Here to see more</h2>
+              <h2 className="text-xl text-gray-400">Click Here to see more</h2>
                 {isOpen && (
                   <p className="text-gray-600 mt-2">{item.description}</p>
                 )}
