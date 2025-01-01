@@ -6,7 +6,8 @@ const events = [
   { time: "1:00 AM - 2:15 AM", description: "Fellowship and Food" },
   { time: "2:15 AM - 3:30 AM", description: "Main Hall - Pictures and Videos" },
   { time: "3:30 AM - 5:30 AM", description: "Free Time Activities" },
-  { time: "5:30 AM - 6:30 AM", description: "End of Night Cleanup" },
+  { time: "5:30 AM - 6:30 AM", description: "End of Night Program - Prayer" },
+  { time: "6:30 AM - 7:30 AM", description: "Cleanup" },
 ];
 
 const EventSchedule = () => {
