@@ -1,4 +1,3 @@
-import React from 'react';
 
 const events = [
   { time: "12:15 AM - 12:45 AM", description: "Сідаємо та заказуваті каву" },
