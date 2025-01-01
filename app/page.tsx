@@ -94,7 +94,7 @@ export default function Home() {
     {
       id: 8,
       title: "Middle Hall",
-      content: "LOTS of the most delicious homemade sweets with a unique surprise!",
+      content: "Lots of the most delicious homemade sweets with a unique surprise!",
       description:
         "Various sweets and treats brought to you by the best bakers and cooks of Slavic Trinity Church. Enjoy a variety of fruits and sweets and definitely come by to find out the big surprise!",
       icon: <FaCookieBite className="text-2xl text-gray-700" aria-hidden="true" />, // Cookie Bite icon
@@ -111,7 +111,7 @@ export default function Home() {
     {
       id: 10,
       title: "Small Hall",
-      content: "Watch our this years slideshow highlighting this years youths moments",
+      content: "Watch our annual slideshow highlighting this years youths moments",
       description:
         "You can always come back to your spot and watch the memories from the year shared by the youth. Feel free to bring your sweets and beverages back and watch the slideshow, listen to music, talk to people, and enjoy the night!",
       icon: <FaMusic className="text-2xl text-gray-700" aria-hidden="true" />, // Music icon
