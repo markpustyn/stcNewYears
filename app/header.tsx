@@ -1,24 +1,37 @@
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+"use client"
 
+import Image from "next/image"
 
-function Header() {
+type HeaderProps = {
+  isDark: boolean
+}
+
+function Header({ isDark }: HeaderProps) {
   return (
-    <div>      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 w-full max-w-4xl">
-        <div className="flex items-center gap-4">
-          <Image src="/logo.png" alt="STC logo" width={80} height={80} className="sm:w-20 sm:h-20" />
-          <h1 className="text-2xl sm:text-3xl font-bold text-white text-center sm:text-left">
-            2026 New Years Celebration
-          </h1>
-        </div>
-        <Link href="/uk">
-          <Button className="w-full sm:w-auto">
-            Український
-          </Button>
-        </Link>
-      </div></div>
+    <header className="w-full max-w-6xl px-2 sm:px-0 pt-2 sm:pt-4">
+      <div className="flex items-center gap-3 min-w-0">
+        <Image
+          src="/logo.png"
+          alt="STC logo"
+          width={64}
+          height={64}
+          className="h-14 w-14 sm:h-16 sm:w-16 shrink-0"
+          priority
+        />
+
+        <h1
+          className={[
+            "min-w-0 font-semibold leading-tight",
+            "text-[20px] sm:text-2xl",
+            "whitespace-normal sm:whitespace-nowrap",
+            "break-words",
+            isDark ? "text-white" : "text-zinc-900",
+          ].join(" ")}
+        >
+          2026 New Years Celebration
+        </h1>
+      </div>
+    </header>
   )
 }
 
