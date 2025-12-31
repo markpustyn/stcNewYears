@@ -11,8 +11,8 @@ const fontSans = FontSans({
 
 
 export const metadata: Metadata = {
-  title: "2025 STC New Years",
-  description: "2025 STC Youth Activities App",
+  title: "2026 STC New Years",
+  description: "2026 STC Youth Activities App",
 };
 
 export default function RootLayout({

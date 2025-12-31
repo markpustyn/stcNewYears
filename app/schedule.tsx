@@ -1,38 +1,40 @@
-import React from 'react';
+"use client"
+import React from "react"
 
 const events = [
-  { time: "12:15 AM - 12:45 AM", description: "Sitting Down - Ordering Coffee" },
-{ time: "12:45 AM - 1:00 AM", description: "Topic Introduction - Food Prayer" },
-  { time: "1:00 AM - 2:15 AM", description: "Fellowship and Food" },
-  { time: "2:15 AM - 3:30 AM", description: "Main Hall - Pictures and Videos" },
-  { time: "3:30 AM - 5:30 AM", description: "Free Time Activities" },
-  { time: "5:30 AM - 6:30 AM", description: "End of Night Cleanup" },
-];
+  { time: "12:15 AM to 12:45 AM", description: "Sitting down and ordering coffee" },
+  { time: "12:45 AM to 1:00 AM", description: "Topic introduction and food prayer" },
+  { time: "1:00 AM to 2:15 AM", description: "Fellowship and food" },
+  { time: "2:15 AM to 3:30 AM", description: "Main hall pictures and videos" },
+  { time: "3:30 AM to 5:30 AM", description: "Free time activities" },
+  { time: "5:30 AM to 6:30 AM", description: "End of night cleanup" },
+]
 
-const EventSchedule = () => {
+export default function EventSchedule() {
   return (
-    <div className="w-full pb-6 bg-gray-100 px-4 sm:px-6 lg:px-8 -mt-6">
+    <div className="w-full rounded-2xl bg-zinc-900 border border-zinc-800 px-6 py-6">
       <ul className="space-y-4">
         {events.map((event, index) => (
-          <li key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-            {/* Time and Description Container */}
-            <div className="flex flex-col sm:flex-row sm:items-center">
-              {/* Time */}
-              <span className="text-lg font-semibold text-gray-700">{event.time}</span>
-              {/* Separator */}
-              <span className="hidden sm:inline-block mx-2 text-gray-500">—</span>
-              {/* Description */}
-              <p className="text-gray-600 text-base">{event.description}</p>
-            </div>
-            {/* Divider for small screens */}
+          <li
+            key={index}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span className="text-sm sm:text-base font-semibold text-zinc-200">
+              {event.time}
+            </span>
+
+            <span className="hidden sm:block text-zinc-600 mx-4">•</span>
+
+            <p className="text-sm sm:text-base text-zinc-400 mt-1 sm:mt-0">
+              {event.description}
+            </p>
+
             {index !== events.length - 1 && (
-              <hr className="mt-2 sm:hidden border-gray-300" />
+              <div className="mt-4 h-px w-full bg-zinc-800 sm:hidden" />
             )}
           </li>
         ))}
       </ul>
     </div>
-  );
-};
-
-export default EventSchedule;
+  )
+}
