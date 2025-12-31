@@ -1,12 +1,12 @@
-import React from 'react';
 
 const events = [
   { time: "12:15 AM - 12:45 AM", description: "Сідаємо та заказуваті каву" },
   { time: "12:45 AM - 1:00 AM", description: "Вступна тема — молитва перед їжею" },
   { time: "1:00 AM - 2:15 AM", description: "Спілкування та їжа" },
   { time: "2:15 AM - 3:30 AM", description: "Головний Зал — фотографії i відео" },
-  { time: "3:30 AM - 5:30 AM", description: "Вільний час" },
-  { time: "5:30 AM - 6:30 AM", description: "Прибирання Maлий Зал" },
+  { time: "3:10 AM - 5:10 AM", description: "Вільний час" },
+  { time: "5:10 AM - 6:10 AM", description: "Програма ночі - Молитва" },
+   { time: "6:10 AM - 7:30 AM", description: "Прибирання Maлий Зал" },
 ];
 
 

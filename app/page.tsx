@@ -6,21 +6,23 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import {
-  FaCamera,
-  FaEnvelope,
-  FaClipboardList,
-  FaPalette,
-  FaCoffee,
-  FaCookieBite,
-  FaCouch,
-  FaMusic,
+} from "@/components/ui/card";
+import Image from "next/image";
+import { 
+  FaCamera, 
+  FaEnvelope, 
+  FaClipboardList, 
+  FaPalette, 
+  FaCoffee, 
+  FaCookieBite, 
+  FaCouch, 
+  FaMusic, 
   FaPaintBrush,
   FaQuestionCircle,
 } from "react-icons/fa"
-import Schedule from "./schedule"
 import Header from "./header"
+import EventSchedule from "./schedule";
+
 
 export default function Home() {
   const [openCard, setOpenCard] = useState<number | null>(null)
@@ -30,15 +32,16 @@ export default function Home() {
     {
       id: 1,
       title: "Choir Room #1",
-      content: "Beautiful memories with friends captured in photos",
+      content: "Beautiful memories with friends captured in timeless photos",
       description:
-        "A photo studio with a spectacular backdrop, professional lighting, and on the spot printing where you can capture the first hours of 2025 with friends.",
-      icon: <FaCamera className="text-2xl text-zinc-300" />,
+        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2025! Bring friends and company to share the excitement with them!",
+      icon: <FaCamera className="text-2xl text-gray-700" aria-hidden="true" />, // Photography icon
     },
     {
       id: 2,
       title: "Room #9",
-      content: "Write wishes and celebratory letters",
+      content:
+        "Purest wishes and celebratory letters to express yourself and bring joy to people around you! Attach a homemade cake pop for just $2 to surprise your recipient.",
       description:
         "Writing stations with cards and supplies to express gratitude and kindness. Add a cake pop for a small surprise.",
       icon: <FaEnvelope className="text-2xl text-zinc-300" />,
@@ -46,15 +49,16 @@ export default function Home() {
     {
       id: 3,
       title: "Room #8",
-      content: "Pick up your cards faster",
+      content: "Pick up your cards even faster!",
       description:
         "Cards organized by last name for quick pickup anytime during the night.",
       icon: <FaClipboardList className="text-2xl text-zinc-300" />,
     },
     {
       id: 4,
-      title: "Room #7 Craft Competitions",
-      content: "Compete with friends for prizes",
+      title: "Room #7 - Craft Competitions",
+      content:
+        "Compete with your friends and other youth for a prize by participating in craft competitions!",
       description:
         "Creative competitions testing design and problem solving skills with prizes for winners.",
       icon: <FaPalette className="text-2xl text-zinc-300" />,
@@ -62,7 +66,8 @@ export default function Home() {
     {
       id: 5,
       title: "Room #5",
-      content: "Create art and poetry",
+      content:
+        "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
       description:
         "Drawing and writing stations with staff to help you express your creativity.",
       icon: <FaPaintBrush className="text-2xl text-zinc-300" />,
@@ -70,15 +75,17 @@ export default function Home() {
     {
       id: 6,
       title: "Room #4",
-      content: "Test your knowledge",
+      content:
+        "Test your knowledge in various categories for a title of the smartest STC Youth member and a sizable cash prize!",
       description:
         "A trivia competition with a fair system and cash prizes for top performers.",
       icon: <FaQuestionCircle className="text-2xl text-zinc-300" />,
     },
     {
       id: 7,
-      title: "Room #1 Coffee Bar",
-      content: "Fresh coffee by STC baristas",
+      title: "Room #1 - Coffee Bar",
+      content:
+        "Our great baristas ready to make you a cup of delicious coffee to accompany you for the celebration",
       description:
         "Business style coffee service available through QR ordering and live line.",
       icon: <FaCoffee className="text-2xl text-zinc-300" />,
@@ -86,7 +93,7 @@ export default function Home() {
     {
       id: 8,
       title: "Middle Hall",
-      content: "Homemade sweets and surprises",
+      content: "LOTS of the most delicious homemade sweets with a unique surprise!",
       description:
         "A variety of sweets and fruits prepared by the church community.",
       icon: <FaCookieBite className="text-2xl text-zinc-300" />,
@@ -102,7 +109,7 @@ export default function Home() {
     {
       id: 10,
       title: "Small Hall",
-      content: "Watch the yearly slideshow",
+      content: "Watch our this years slideshow highlighting this years youths moments",
       description:
         "Relive the years moments with music and memories on the big screen.",
       icon: <FaMusic className="text-2xl text-zinc-300" />,
@@ -114,7 +121,7 @@ export default function Home() {
       <Header />
 
       <div className="mt-6 w-full max-w-5xl">
-        <Schedule />
+        <EventSchedule />
       </div>
 
       <div className="mt-12 grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
@@ -145,9 +152,8 @@ export default function Home() {
                   </CardTitle>
                 </div>
               </CardHeader>
-
-              <CardContent className="text-sm text-zinc-400">
-                <p>{item.content}</p>
+              <CardContent>
+                <p className="text-gray-600">{item.content}</p>
                 {isOpen && (
                   <p className="mt-3 text-zinc-300 leading-relaxed">
                     {item.description}
