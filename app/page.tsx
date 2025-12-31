@@ -148,7 +148,7 @@ export default function Home() {
   const ENdata = [
     {
       id: 1,
-      title: "Choir Room #1",
+      title: "Choir Room #1 - Photo Studio",
       content: "Beautiful memories with friends captured in timeless photos",
       description:
         "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2026! Bring friends and company to share the excitement with them!",
@@ -156,19 +156,19 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Room #9",
+      title: "Room #8 - Gift Shop",
       content:
-        "Purest wishes and celebratory letters to express yourself and bring joy to people around you! Attach a homemade cake pop for just $2 to surprise your recipient.",
+        "This New Years you can gift yourself or an anonymous friend a gift from the Gift Shop",
       description:
-        "Writing stations with cards and supplies to express gratitude and kindness. Add a cake pop for a small surprise.",
+        " A thoughtful gift for yourself or an anonymous friend is available while supplies last. Visit room #8 to secure your gift. Any proceeds raised will be donated to our Widow Ministry! Be blessed and Happy New Years!",
       icon: <FaEnvelope className="text-2xl" />,
     },
     {
       id: 3,
-      title: "Room #8",
-      content: "Pick up your cards even faster!",
-      description: "Cards organized by last name for quick pickup anytime during the night.",
-      icon: <FaClipboardList className="text-2xl" />,
+      title: "Room #4 - Test Room",
+      content: "Win $100 Gift for the test your knowledge in various categories for a title of the smartest STC Youth member!",
+      description: "Take the test comrpsied of several categories.",
+      icon: <FaQuestionCircle className="text-2xl" />,
     },
     {
       id: 4,
@@ -178,25 +178,25 @@ export default function Home() {
       icon: <FaPalette className="text-2xl" />,
     },
     {
+      id: 7,
+      title: "Choir Room Hallway - Photo Booth",
+      content: "Complete photo booth experience with props and instant prints to take home!",
+      description: "Take fun photos with friends using various props and instant printouts to take home.",
+      icon: <FaCoffee className="text-2xl" />,
+    },
+    {
       id: 5,
-      title: "Room #5",
+      title: "Room #11 - Art & Paiting",
       content: "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
       description: "Drawing and writing stations with staff to help you express your creativity.",
       icon: <FaPaintBrush className="text-2xl" />,
     },
     {
       id: 6,
-      title: "Room #4",
-      content: "Test your knowledge in various categories for a title of the smartest STC Youth member and a sizable cash prize!",
-      description: "A trivia competition with a fair system and cash prizes for top performers.",
-      icon: <FaQuestionCircle className="text-2xl" />,
-    },
-    {
-      id: 7,
-      title: "Room #1 - Coffee Bar",
-      content: "Our great baristas ready to make you a cup of delicious coffee to accompany you for the celebration",
-      description: "Business style coffee service available through QR ordering and live line.",
-      icon: <FaCoffee className="text-2xl" />,
+      title: "Room #11 - Art & Paiting",
+      content: "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
+      description: "Drawing and writing stations with staff to help you express your creativity.",
+      icon: <FaPaintBrush className="text-2xl" />,
     },
     {
       id: 8,
