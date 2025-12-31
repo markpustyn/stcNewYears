@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
 import { 
   FaCamera, 
   FaEnvelope, 
@@ -35,7 +34,7 @@ export default function Home() {
       content: "Beautiful memories with friends captured in timeless photos",
       description:
         "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2025! Bring friends and company to share the excitement with them!",
-      icon: <FaCamera className="text-2xl text-gray-700" aria-hidden="true" />, // Photography icon
+      icon: <FaCamera className="text-2xl text-zinc-300" aria-hidden="true" />,
     },
     {
       id: 2,
