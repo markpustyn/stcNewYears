@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   FaCamera,
   FaEnvelope,
-  FaClipboardList,
   FaPalette,
   FaCoffee,
   FaCookieBite,
@@ -58,7 +57,7 @@ export default function Home() {
     localStorage.setItem("lang", lang)
   }, [lang])
 
-  const UKData = [
+  const ukData = [
   {
     id: 1,
     title: "Choir Room 1 Photo Studio",
