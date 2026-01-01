@@ -14,9 +14,9 @@ const events = [
 const eventsUK = [
   { time: "12:15 AM to 12:45 AM", description: "Сідаємо та молитва за їжу" },
   { time: "12:45 AM to 2:15 AM", description: "Спілкування та їжа & кава" },
-  { time: "2:30 AM to 3:15 AM", description: "Програма в головному залі" },
-  { time: "3:15 AM to 5:15 AM", description: "Вільний час та активності" },
-  { time: "5:15 AM to 6:15 AM", description: "Нагороди та підбиття підсумків у малому залі" },
+  { time: "2:30 AM to 4:00 AM", description: "Програма в головному залі" },
+  { time: "4:00 AM to 5:30 AM", description: "Вільний час та активності" },
+  { time: "5:30 AM to 6:15 AM", description: "Нагороди та підбиття підсумків у малому залі" },
   { time: "6:30 AM to 8:30 AM", description: "Прибирання малого залу" },
 ];
 
