@@ -15,6 +15,7 @@ import {
   FaQuestionCircle,
   FaSun,
   FaMoon,
+  FaComment
 } from "react-icons/fa"
 import Header from "./header"
 import EventSchedule from "./schedule"
@@ -57,171 +58,206 @@ export default function Home() {
     localStorage.setItem("lang", lang)
   }, [lang])
 
-  const UKdata = [
-    {
-      id: 1,
-      title: "Хорова кімната #1",
-      content: "Прекрасні спогади з друзями, зафіксовані на світлинах",
-      description:
-        "Фотостудія з вражаючими декораціями, професійним освітленням, чудовою фотозйомкою та миттєвим друком, де ВИ можете відчути перші години 2025 року! Запрошуйте друзів і знайомих, щоб разом розділити захоплення!",
-      icon: <FaCamera className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 2,
-      title: "Кімната #9",
-      content:
-        "Найщиріші побажання та святкові листівки, щоб висловити себе та подарувати радість оточуючим! Додайте домашній Cake Pop за $2, щоб здивувати отримувача.",
-      description:
-        "Кімната з робочими столами, листівками та всіма необхідними ресурсами, аби написати щире послання людині, якій хочете висловити повагу або вдячність. Можна залишити анонімним або підписати власним іменем, але обов’язково наповніть листівку добром та любов’ю!",
-      icon: <FaEnvelope className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 3,
-      title: "Кімната #8",
-      content: "Отримайте свої листівки ще швидше!",
-      description:
-        "Якщо вам не терпиться, поки організатори знайдуть вас і вручать листівки, адресовані саме вам, заходьте до Кімнати №8 і шукайте картки на столах, розсортовані за першою літерою вашого прізвища.",
-      icon: <FaClipboardList className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 4,
-      title: "Кімната #7 — Конкурси виробів",
-      content: "Змагайтеся з друзями та молоддю за приз, беручи участь у конкурсі виробів!",
-      description:
-        "Це веселий і невимушений спосіб провести вільний час із друзями та місце, де можна проявити свої інженерні, креативні та дизайнерські вміння й отримати шанс виграти приз!",
-      icon: <FaPalette className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 5,
-      title: "Кімната #5",
-      content:
-        "Використайте свій художній талант, щоб створити шедевр і поділитися ним з молоддю за приз та визнання!",
-      description:
-        "Тут є декілька мистецьких та письмових зон з натхненною атмосферою і чудовою командою, яка допоможе вивільнити вашу креативність і дати волю внутрішньому митцю, створюючи мальовничий малюнок або неперевершений вірш!",
-      icon: <FaPaintBrush className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 6,
-      title: "Кімната #4",
-      content:
-        "Випробуйте свої знання в різних категоріях, щоб здобути звання найрозумнішого учасника молоді STC та вагомий грошовий приз!",
-      description:
-        "Кімната з чудовим професійним оздобленням і справедливою системою перевірки знань. Готові прийняти виклик? Чи зможете ви здобути приз і піти з цього святкування як найрозумніший учасник?",
-      icon: <FaQuestionCircle className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 7,
-      title: "Кімната #1 — Кава",
-      content:
-        "Наші чудові баристи готові приготувати для вас запашну каву, щоб зробити ваш вечір ще святковішим.",
-      description:
-        "Це обслуговування в бізнес-стилі з надзвичайно смачними кавовими напоями від команди STC Coffee та їхньою теплою атмосферою. Не пропустіть їхні особливі позиції в меню, які можна замовити через QR-код під час прийому їжі, а також безпосередньо у черзі в вільний час!",
-      icon: <FaCoffee className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 8,
-      title: "Середній зал",
-      content: "БАГАТО найсмачніших домашніх солодощів із приємним сюрпризом!",
-      description:
-        "Різноманітні ласощі та смаколики від найкращих пекарів i кухарів Слов’янської Трінітарної Церкви. Скуштуйте широкий вибір фруктів і солодкого та обов’язково завітайте, аби дізнатися про великий сюрприз!",
-      icon: <FaCookieBite className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 9,
-      title: "Братська кімната",
-      content:
-        "Хапайте напої, солодощі та друзів, щоб розслабитись i провести час y невимушених розмовах та iграх у затишній атмосфері!",
-      description:
-        "Це лаундж-зона, де можна відпочити в спокійній, приємній обстановці та поспілкуватися з іншими. Обирайте з безлічі ігор на кшталт Дженга чи Connect 4 або спробуйте скласти пазл разом із друзями чи новими знайомими!",
-      icon: <FaCouch className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 10,
-      title: "Малий зал",
-      content: "Перегляньте цьогорічний слайд-шоу, що висвітлює найяскравіші моменти молоді!",
-      description:
-        "Ви завжди можете повернутись до своєї зони i подивитися спогади за минулий рік, якими ділиться молодь. Вільно беріть із собою солодощі й напої, дивіться слайд-шоу, слухайте музику, спілкуйтеся з людьми й насолоджуйтесь вечором!",
-      icon: <FaMusic className="text-2xl" aria-hidden="true" />,
-    },
-  ]
+  const UKData = [
+  {
+    id: 1,
+    title: "Choir Room 1 Photo Studio",
+    content: "Зробіть новорічні фото з друзями у святковій атмосфері",
+    description:
+      "Професійна фотостудія з освітленням, фонами та миттєвим друком. Заберіть із собою памʼять про перші години 2026 року.",
+    icon: <FaCamera className="text-2xl" aria-hidden="true" />,
+  },
+  {
+    id: 2,
+    title: "Room 8 Gift Shop",
+    content: "Подарунок для себе або анонімного друга",
+    description:
+      "Оберіть продуманий подарунок поки є в наявності. Усі зібрані кошти будуть передані на служіння вдовам.",
+    icon: <FaEnvelope className="text-2xl" />,
+  },
+  {
+    id: 3,
+    title: "Room 4 Knowledge Challenge",
+    content: "Перевір свої знання та змагайся за приз",
+    description:
+      "Тест із кількох категорій де учасники змагаються за звання найрозумнішого учасника STC Youth.",
+    icon: <FaQuestionCircle className="text-2xl" />,
+  },
+  {
+    id: 4,
+    title: "Room 7 Craft Competitions",
+    content: "Творчі завдання та змагання з призами",
+    description:
+      "Конкурси що перевіряють креативність логіку та роботу в команді.",
+    icon: <FaPalette className="text-2xl" />,
+  },
+  {
+    id: 5,
+    title: "Room 1 Coffee Shop",
+    content: "Свіжа кава та гарячі напої всю ніч",
+    description:
+      "Насолоджуйтеся кавою приготовленою нашими баристами у затишній атмосфері.",
+    icon: <FaCoffee className="text-2xl" />,
+  },
+  {
+    id: 6,
+    title: "Choir Room Hallway Photo Booth",
+    content: "Веселі фото з реквізитом та миттєвим друком",
+    description:
+      "Легка фотозона для швидких знімків з друзями та фото на памʼять.",
+    icon: <FaCamera className="text-2xl" />,
+  },
+  {
+    id: 7,
+    title: "Room 11 Art and Painting",
+    content: "Створи власний витвір мистецтва",
+    description:
+      "Зони для малювання та живопису з підтримкою наставників і можливістю виграти приз.",
+    icon: <FaPaintBrush className="text-2xl" />,
+  },
+  {
+    id: 8,
+    title: "Middle Hall Sweets Table",
+    content: "Домашні солодощі та приємний сюрприз",
+    description:
+      "Різноманіття десертів і фруктів приготовлених церковною спільнотою.",
+    icon: <FaCookieBite className="text-2xl" />,
+  },
+  {
+    id: 9,
+    title: "Brothers Room Lounge",
+    content: "Спокійний простір для відпочинку",
+    description:
+      "Місце щоб посидіти поспілкуватися та просто розслабитися.",
+    icon: <FaCouch className="text-2xl" />,
+  },
+  {
+    id: 10,
+    title: "Rooms 2 and 3 Game Room",
+    content: "Ігри та дружні змагання",
+    description:
+      "Простір для настільних ігор та веселого часу з друзями.",
+    icon: <FaCouch className="text-2xl" />,
+  },
+  {
+    id: 11,
+    title: "Choir Room 2 Debate Room",
+    content: "Дискусії та обмін думками",
+    description:
+      "Модеровані обговорення що заохочують мислення повагу та активну участь.",
+    icon: <FaComment className="text-2xl" />,
+  },
+  {
+    id: 12,
+    title: "Small Hall Slideshow",
+    content: "Спогади молодіжного року на великому екрані",
+    description:
+      "Слайдшоу з музикою фотографіями та найкращими моментами року.",
+    icon: <FaMusic className="text-2xl" />,
+  },
+]
+
 
   
   const ENdata = [
-    {
-      id: 1,
-      title: "Choir Room #1 - Photo Studio",
-      content: "Beautiful memories with friends captured in timeless photos",
-      description:
-        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2026! Bring friends and company to share the excitement with them!",
-      icon: <FaCamera className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 2,
-      title: "Room #8 - Gift Shop",
-      content:
-        "This New Years you can gift yourself or an anonymous friend a gift from the Gift Shop",
-      description:
-        " A thoughtful gift for yourself or an anonymous friend is available while supplies last. Visit room #8 to secure your gift. Any proceeds raised will be donated to our Widow Ministry! Be blessed and Happy New Years!",
-      icon: <FaEnvelope className="text-2xl" />,
-    },
-    {
-      id: 3,
-      title: "Room #4 - Test Room",
-      content: "Win $100 Gift for the test your knowledge in various categories for a title of the smartest STC Youth member!",
-      description: "Take the test comrpsied of several categories.",
-      icon: <FaQuestionCircle className="text-2xl" />,
-    },
-    {
-      id: 4,
-      title: "Room #7 - Craft Competitions",
-      content: "Compete with your friends and other youth for a prize by participating in craft competitions!",
-      description: "Creative competitions testing design and problem solving skills with prizes for winners.",
-      icon: <FaPalette className="text-2xl" />,
-    },
-    {
-      id: 7,
-      title: "Choir Room Hallway - Photo Booth",
-      content: "Complete photo booth experience with props and instant prints to take home!",
-      description: "Take fun photos with friends using various props and instant printouts to take home.",
-      icon: <FaCoffee className="text-2xl" />,
-    },
-    {
-      id: 6,
-      title: "Room #11 - Art & Paiting",
-      content: "Use your artistic talents to create a masterpiece and share it with youth for a prize!",
-      description: "Drawing and writing stations with staff to help you express your creativity.",
-      icon: <FaPaintBrush className="text-2xl" />,
-    },
-    {
-      id: 8,
-      title: "Middle Hall",
-      content: "LOTS of the most delicious homemade sweets with a unique surprise!",
-      description: "A variety of sweets and fruits prepared by the church community.",
-      icon: <FaCookieBite className="text-2xl" />,
-    },
-    {
-      id: 9,
-      title: "Brothers Room",
-      content: "Relax and hang out",
-      description: "A lounge space with games and a cozy atmosphere to talk and unwind.",
-      icon: <FaCouch className="text-2xl" />,
-    },
-        {
-      id: 1,
-      title: "Choir Room #2 - Debate Room",
-      content: "Beautiful memories with friends captured in timeless photos",
-      description:
-        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2026! Bring friends and company to share the excitement with them!",
-      icon: <FaCamera className="text-2xl" aria-hidden="true" />,
-    },
-    {
-      id: 10,
-      title: "Small Hall",
-      content: "Watch our this years slideshow highlighting this years youths moments",
-      description: "Relive the years moments with music and memories on the big screen.",
-      icon: <FaMusic className="text-2xl" />,
-    },
-  ]
+  {
+    id: 1,
+    title: "Choir Room 1 Photo Studio",
+    content: "Capture New Years moments with friends in high quality photos",
+    description:
+      "A full photo studio with professional lighting, custom backdrops, and instant prints. Stop by with friends and take home a memory from the first hours of 2026.",
+    icon: <FaCamera className="text-2xl" aria-hidden="true" />,
+  },
+  {
+    id: 2,
+    title: "Room 8 Gift Shop",
+    content: "Give a gift to yourself or bless someone anonymously",
+    description:
+      "Choose a thoughtful gift for yourself or an anonymous friend while supplies last. All proceeds support the Widow Ministry. Celebrate New Years with purpose.",
+    icon: <FaEnvelope className="text-2xl" />,
+  },
+  {
+    id: 3,
+    title: "Room 4 Knowledge Challenge",
+    content: "Test your knowledge and compete for a 100 dollar prize",
+    description:
+      "A multi category challenge where participants compete for the title of smartest STC Youth member.",
+    icon: <FaQuestionCircle className="text-2xl" />,
+  },
+  {
+    id: 4,
+    title: "Room 7 Craft Competitions",
+    content: "Create, build, and compete for prizes",
+    description:
+      "Hands on creative challenges that test design, teamwork, and problem solving skills.",
+    icon: <FaPalette className="text-2xl" />,
+  },
+  {
+    id: 5,
+    title: "Room 1 Coffee Shop",
+    content: "Warm drinks made fresh by our baristas",
+    description:
+      "Enjoy freshly made coffee and drinks while relaxing and socializing throughout the night.",
+    icon: <FaCoffee className="text-2xl" />,
+  },
+  {
+    id: 6,
+    title: "Choir Room Hallway Photo Booth",
+    content: "Fun photos with props and instant prints",
+    description:
+      "A casual photo booth experience with props and instant photos to take home.",
+    icon: <FaCamera className="text-2xl" />,
+  },
+  {
+    id: 7,
+    title: "Room 11 Art and Painting",
+    content: "Create art and share your talent",
+    description:
+      "Painting and drawing stations with guidance available. Share your work and compete for prizes.",
+    icon: <FaPaintBrush className="text-2xl" />,
+  },
+  {
+    id: 8,
+    title: "Middle Hall Sweets Table",
+    content: "Homemade desserts and a special surprise",
+    description:
+      "A wide selection of sweets and fruits prepared by our church community.",
+    icon: <FaCookieBite className="text-2xl" />,
+  },
+  {
+    id: 9,
+    title: "Brothers Room Lounge",
+    content: "Relax, talk, and unwind",
+    description:
+      "A calm space to sit back, hang out, and enjoy conversation.",
+    icon: <FaCouch className="text-2xl" />,
+  },
+  {
+    id: 10,
+    title: "Rooms 2 and 3 Game Room",
+    content: "Games, competition, and fun with friends",
+    description:
+      "A dedicated space for group games and friendly competition.",
+    icon: <FaCouch className="text-2xl" />,
+  },
+  {
+    id: 11,
+    title: "Choir Room 2 Debate Room",
+    content: "Discuss, challenge ideas, and think deeply",
+    description:
+      "Guided discussions and debate topics designed to encourage thoughtful conversation and respectful dialogue.",
+    icon: <FaComment className="text-2xl" />,
+  },
+  {
+    id: 12,
+    title: "Small Hall Slideshow",
+    content: "Relive this years youth memories",
+    description:
+      "A highlight slideshow of the year with music, photos, and special moments on the big screen.",
+    icon: <FaMusic className="text-2xl" />,
+  },
+]
+
 
   const list = lang === "uk" ? UKdata : ENdata
 
