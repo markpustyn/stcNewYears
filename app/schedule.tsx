@@ -4,9 +4,9 @@ import React from "react"
 const events = [
   { time: "12:15 AM to 12:45 AM", description: "Sitting down and Prayer for food" },
   { time: "12:45 AM to 2:15 AM", description: "Fellowship and food & Coffee" },
-  { time: "2:30 AM to 3:15 AM", description: "Main Hall Program" },
-  { time: "3:15 AM to 5:15 AM", description: "Free time activities" },
-  { time: "5:15 AM to 6:15 AM", description: "Small Hall Prizes And Comeptition Descisions" },
+  { time: "2:30 AM to 4:00 AM", description: "Main Hall Program" },
+  { time: "4:00 AM to 5:30 AM", description: "Free time activities" },
+  { time: "5:30 AM to 6:15 AM", description: "Small Hall Prizes And Comeptition Descisions" },
   { time: "6:30 AM to 8:30 AM", description: "Clean Up Small Hall" },
 ]
 
