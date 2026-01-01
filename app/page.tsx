@@ -145,6 +145,7 @@ export default function Home() {
     },
   ]
 
+  
   const ENdata = [
     {
       id: 1,
@@ -185,16 +186,9 @@ export default function Home() {
       icon: <FaCoffee className="text-2xl" />,
     },
     {
-      id: 5,
-      title: "Room #11 - Art & Paiting",
-      content: "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
-      description: "Drawing and writing stations with staff to help you express your creativity.",
-      icon: <FaPaintBrush className="text-2xl" />,
-    },
-    {
       id: 6,
       title: "Room #11 - Art & Paiting",
-      content: "Use your artistic talents to create a masterpiece and share it with youth for a prize and youth admiration!",
+      content: "Use your artistic talents to create a masterpiece and share it with youth for a prize!",
       description: "Drawing and writing stations with staff to help you express your creativity.",
       icon: <FaPaintBrush className="text-2xl" />,
     },
@@ -211,6 +205,14 @@ export default function Home() {
       content: "Relax and hang out",
       description: "A lounge space with games and a cozy atmosphere to talk and unwind.",
       icon: <FaCouch className="text-2xl" />,
+    },
+        {
+      id: 1,
+      title: "Choir Room #2 - Debate Room",
+      content: "Beautiful memories with friends captured in timeless photos",
+      description:
+        "A photo studio with a spectacular backdrop, professional lighting, masterful photography, and on-the-spot printing where YOU can capture the first hours of 2026! Bring friends and company to share the excitement with them!",
+      icon: <FaCamera className="text-2xl" aria-hidden="true" />,
     },
     {
       id: 10,

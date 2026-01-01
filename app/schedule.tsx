@@ -3,21 +3,21 @@ import React from "react"
 
 const events = [
   { time: "12:15 AM to 12:45 AM", description: "Sitting down and Prayer for food" },
-  { time: "12:45 AM to 1:00 AM", description: "Fellowship and food" },
-  { time: "1:00 AM to 2:15 AM", description: "Fellowship and food" },
-  { time: "2:15 AM to 3:30 AM", description: "Main hall pictures and videos" },
-  { time: "3:30 AM to 5:30 AM", description: "Free time activities" },
+  { time: "12:45 AM to 2:15 AM", description: "Fellowship and food & Coffee" },
+  { time: "2:30 AM to 3:15 AM", description: "Main Hall Program" },
+  { time: "3:15 AM to 5:15 AM", description: "Free time activities" },
+  { time: "5:15 AM to 6:15 AM", description: "Small Hall Prizes And Comeptition Descisions" },
+  { time: "6:30 AM to 8:30 AM", description: "Clean Up Small Hall" },
 ]
 
 
 const eventsUK = [
-  { time: "12:15 AM - 12:45 AM", description: "Сідаємо та заказуваті каву" },
-  { time: "12:45 AM - 1:00 AM", description: "Вступна тема — молитва перед їжею" },
-  { time: "1:00 AM - 2:15 AM", description: "Спілкування та їжа" },
-  { time: "2:15 AM - 3:30 AM", description: "Головний Зал — фотографії i відео" },
-  { time: "3:10 AM - 5:10 AM", description: "Вільний час" },
-  { time: "5:10 AM - 6:10 AM", description: "Програма ночі - Молитва" },
-   { time: "6:10 AM - 7:30 AM", description: "Прибирання Maлий Зал" },
+  { time: "12:15 AM to 12:45 AM", description: "Сідаємо та молитва за їжу" },
+  { time: "12:45 AM to 2:15 AM", description: "Спілкування та їжа & кава" },
+  { time: "2:30 AM to 3:15 AM", description: "Програма в головному залі" },
+  { time: "3:15 AM to 5:15 AM", description: "Вільний час та активності" },
+  { time: "5:15 AM to 6:15 AM", description: "Нагороди та підбиття підсумків у малому залі" },
+  { time: "6:30 AM to 8:30 AM", description: "Прибирання малого залу" },
 ];
 
 type EventScheduleProps = {
