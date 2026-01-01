@@ -57,7 +57,7 @@ export default function Home() {
     localStorage.setItem("lang", lang)
   }, [lang])
 
-  const ukData = [
+  const UKdata = [
   {
     id: 1,
     title: "Choir Room 1 Photo Studio",
